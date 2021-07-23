@@ -1,0 +1,54 @@
+{% include 'prediction/base.html' %}
+
+{% block content %}
+<div id="intro" class="container-fluid view ">
+    <h1 class="text-center text-capitalize pt-5">Know your chances of getting kidney disease in one Click!</h1>
+    <hr class="w-75 mx-auto pt-5">
+    <div class="row mb-5">
+      <div class="col-lg-6 col-md-6 col-12 my-auto">
+        <img src="https://www.lifelinescreening.com/-/media/project/life-line-screening/life-line-screening/6-health-education/articles/disease-information/kidneys-in-dr-hands.jpg" class="float-left", width="100%">
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <form action="{% url 'predict_kidney_disease' %}" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="bp">Blood Pressure</label>
+            <input class="form-control" type="number" id="bp" name="Year" required="required" placeholder="Blood Pressure">
+          </div>
+
+          <div class="form-group">
+            <label for="sg">Specific Gravity</label>
+            <input class="form-control" type="number" step="any" id="sg" name="sg" required="required" placeholder="Specific Gravity">
+          </div>
+
+          <div class="form-group">
+            <label for="al">Albumin</label>
+            <input class="form-control" type="number" id="al" name="al" required="required" placeholder="Albumin">
+          </div>
+
+          <div class="form-group">
+            <label for="su">Blood Sugar Level</label>
+            <input class="form-control" type="number" id="su" name="su" required="required" placeholder="Blood Sugar Level">
+          </div>
+
+          <div class="form-group">
+            <label for="rbc">Red Blood Cells Count</label>
+            <input class="form-control" type="number" id="rbc" name="rbc" required="required" placeholder="Red Blood Cells Count">
+          </div>
+
+          <div class="form-group">
+            <label for="pc">Pus Cell Count</label>
+            <input class="form-control" type="number" id="pc" name="pc" required="required" placeholder="Pus Cell Count">
+          </div>
+
+          <div class="form-group">
+            <label for="pcc">Pus Cell Clumps</label>
+            <input class="form-control" type="number" id="pcc" name="pcc" required="required" placeholder="Pus Cell Clumps">
+          </div>           
+          
+          <button type="submit" class="btn btn-danger">Predict</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

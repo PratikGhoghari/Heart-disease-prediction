@@ -1,0 +1,47 @@
+{% include 'prediction/base.html' %}
+
+{% block content %}
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://miro.medium.com/max/700/1*C-x191pvNmTRS2Q0QrUKXQ.jpeg" alt="First slide" height="550vm">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://i.ytimg.com/vi/iZjWEVkDrHY/maxresdefault.jpg" alt="Second slide" height="550vm">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://thumbs.dreamstime.com/b/ai-medical-background-concept-155234616.jpg" alt="Third slide" height="550vm">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+    <div class="row" id="marketing-margin">
+      <div class="col-lg-4 bg-danger">
+        <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRP1ItxfyzW3X9lEP_e0t5LAJU_HxWezOH_A&usqp=CAU" alt="clock" width="140" height="140">
+        <h2>Quick Prediction</h2>
+        <p>We have used light ML model that can load within no time without compromising on the accuracy of the prediction. Light models quickly load which helps in better response of the page.</p>
+      </div>
+      <div class="col-lg-4 bg-info">
+        <img class="rounded-circle mx-auto" src="data:image/png;base64,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" alt="clock" width="140" height="140">
+        <h2>Wide Range</h2>
+        <p>This Web-App provides a wide range of predicting the contamination multiple infectious diseases like Kidney disease, Diabetes, Heart Disease & Covid-19.</p>
+      </div>
+      <div class="col-lg-4 bg-success">
+        <img class="rounded-circle" src="https://image.shutterstock.com/image-vector/target-icon-vector-symbol-web-600w-1199605828.jpg" alt="clock" width="160" height="140">
+        <h2>Highly Accurate</h2>
+        <p>Though this app provides a wide range and high speed the accuracy has not been compromised. Hyper-parameters have been selected very carefully so that the accuracy is not hampered.</p>
+      </div>
+  </div>
+{% endblock %}

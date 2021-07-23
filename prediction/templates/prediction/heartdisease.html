@@ -1,0 +1,73 @@
+{% include 'prediction/base.html' %}
+
+{% block content %}
+<div class="label">
+    <h1 class="text-center text-capitalize pt-5">Predict your chances of getting Heart Disease in one click!</h1>
+</div>
+
+<div class="container-fluid view">
+    <hr class="w-75 mx-auto pt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <img  class="img-fluid" src="https://thumbs.dreamstime.com/b/red-heart-icon-sign-heartbeat-vector-illustration-flat-design-155217306.jpg" alt="heartbeat">
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+            <form action="{% url 'predict_heart_disease' %}" method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="cp">Chest Pain Type</label>
+                <select class="form-control" id="cp" name = "cp" required="required" placeholder="Chest Pain Type">
+                  <option value="1">Typical Angina</option>
+                  <option value="2">Atypical Angina</option>
+                  <option value="3">Non-Anginal Pain</option>
+                  <option value="4">Asymptomatic</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <!-- TODO : Year to accept only year date picker -->
+                <label for="trestbps">Resting Blood Pressure (in mm Hg)</label>
+                <input class="form-control" type="number" id="trestbps" name="trestbps" required="required" placeholder="Resting Blood Pressure">
+              </div>
+
+              <div class="form-group">
+                <label for="chol">Serum Cholestoral in mg/dl</label>
+                <input class="form-control" type="number" step="any" id="chol" name="chol" required="required" placeholder="Serum Cholestoral">
+              </div>
+
+              <div class="form-group">
+                <label for="fbs">Fasting Blood Sugar</label>
+                <select class="form-control" id="fbs" name = "fbs" required="required" placeholder="Fasting Blood Sugar">
+                  <option value="0">Fasting Blood Sugar < 120 mg/dl</option>
+                  <option value="1">Fasting Blood Sugar > 120 mg/dl</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="restecg">Resting Electro-cardiographic Result</label>
+                <select class="form-control" type="number" id="restecg" name="restecg" required="required" placeholder="Resting Electro-cardiographic Result">
+                <option value="0">Normal</option>
+                <option value="1">having ST-T wave abnormality</option>
+                <option value="2">showing probable or definite left ventricular hypertrophy</option>
+            	</select>
+              </div>
+              
+              <div class="form-group">
+                <label for="thalach">Maximum Heart Rate Achieved</label>
+                <input class="form-control" id="thalach" name = "thalach" required="required" >
+              </div>
+
+              <div class="form-group">
+                <label for="exang">Exercise Induced Angina</label>
+                <select class="form-control" id="exang" name = "exang" required="required" >
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-danger">Predict</button>
+            </form>
+          </div>
+    </div>
+</div>
+
+{% endblock %}
